@@ -2,6 +2,7 @@ import "@/app/globals.css";
 import { title } from "process";
 import React from "react";
 import Button from "./Button";
+import Link from "next/link";
 
 interface HeaderProps {
   pageTitle: string;
@@ -16,11 +17,13 @@ interface HeaderProps {
 const Header = (props: HeaderProps) => {
   const listButtons = props.links.map((item, idx) => (
     <div className="place-content-center" key={idx}>
-      <Button textToDisplay={item.pageName} click={() => {}} />
+      <Link href={item.pageUrl}>
+        <Button textToDisplay={item.pageName} click={() => {}} />
+      </Link>
     </div>
   ));
   return (
-    <div className="flex-row p-4 w-4/5 bg-bsCardBackgroundColor border-solid border-8 rounded-3xl m-4">
+    <div className="flex-row p-4 w-10/12 bg-bsCardBackgroundColor border-solid border-8 rounded-3xl m-4">
       <div className="font-bold text-center text-fourthcolor tracking-wider text-3xl p-1">
         <h1>{props.pageTitle}</h1>
       </div>
