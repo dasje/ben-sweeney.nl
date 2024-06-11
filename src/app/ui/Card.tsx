@@ -10,7 +10,7 @@ interface CardProps {
 
 const Card = (props: CardProps) => {
   return (
-    <div className="flex-row p-1 md:p-4 bg-bsCardBackgroundColor border-solid border-8 rounded-3xl md:w-9/12">
+    <div className="flex-row p-1 md:p-4 bg-bsCardBackgroundColor border-solid border-8 rounded-3xl w-full md:w-9/12">
       {props.title && (
         <div className="font-bold text-center text-fourthcolor tracking-wider text-3xl p-1">
           <h1>{props.title}</h1>

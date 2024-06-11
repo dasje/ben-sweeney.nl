@@ -28,11 +28,12 @@ export default function RootLayout({
             <div className="flex justify-center sticky inset-x-0 top-0 block">
               <Header pageTitle="Ben Sweeney" links={nav} />
             </div>
-            <div className="grid h-screen place-items-start justify-items-center block space-y-4">
+            <div className="mt-auto"></div>
+            <div className="grid place-items-start justify-items-center block space-y-4">
               {children}
             </div>
             <div className="mb-auto"></div>
-            <div className="flex justify-center fixed inset-x-0 bottom-0">
+            <div className="flex justify-center md:sticky inset-x-0 bottom-0 block">
               <Footer />
             </div>
           </div>

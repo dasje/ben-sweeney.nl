@@ -13,12 +13,32 @@ const details = {
   aboutText: "Ben is a great programmer, you should hire him.",
   programmingLanguageSkills: [
     {
+      skillName: "Python",
+      progressPercentage: 80,
+    },
+    {
+      skillName: "JavaScript",
+      progressPercentage: 75,
+    },
+    {
+      skillName: "TypeScript",
+      progressPercentage: 70,
+    },
+    {
+      skillName: "SQL",
+      progressPercentage: 90,
+    },
+    {
       skillName: "Java",
       progressPercentage: 40,
     },
     {
-      skillName: "Python",
-      progressPercentage: 75,
+      skillName: "Kotlin",
+      progressPercentage: 50,
+    },
+    {
+      skillName: "Go",
+      progressPercentage: 40,
     },
   ],
   achievements: {
