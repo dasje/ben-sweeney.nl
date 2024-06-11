@@ -14,7 +14,7 @@ interface ExperienceProps {
 
 const Experience = ({ experience }: ExperienceProps) => {
   return (
-    <div className="bg-sixthcolor rounded-xl m-5 p-1">
+    <div className="bg-sixthcolor rounded-xl md:m-1 p-1">
       {experience.map((v, k) => {
         return (
           <ExperienceRack

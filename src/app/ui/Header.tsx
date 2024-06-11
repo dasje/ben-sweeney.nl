@@ -23,7 +23,7 @@ const Header = (props: HeaderProps) => {
     </div>
   ));
   return (
-    <div className="flex-row p-4 w-10/12 bg-bsCardBackgroundColor border-solid border-8 rounded-3xl m-4">
+    <div className="flex-row p-4 w-11/12 md:w-10/12 bg-bsCardBackgroundColor border-solid border-8 rounded-3xl m-4">
       <div className="font-bold text-center text-fourthcolor tracking-wider text-3xl p-1">
         <h1>{props.pageTitle}</h1>
       </div>

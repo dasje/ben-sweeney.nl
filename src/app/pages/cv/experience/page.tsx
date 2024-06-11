@@ -7,8 +7,11 @@ import Experience from "@/app/ui/Experience";
 export default function Page() {
   return (
     <Card title="Experience">
-      <div className="bg-thirdcolor p-5 rounded-2xl text-white">
+      <div className="bg-thirdcolor md:p-5 rounded-2xl text-white">
         <Experience experience={details.achievements.experience} />
+      </div>
+      <div className="bg-thirdcolor md:p-5 rounded-2xl text-white">
+        <Experience experience={details.achievements.otherExperience} />
       </div>
     </Card>
   );
