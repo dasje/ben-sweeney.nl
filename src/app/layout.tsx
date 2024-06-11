@@ -5,6 +5,7 @@ import "@/app/globals.css";
 import { inter, chauPhilomene } from "@/app/ui/fonts";
 import Header from "./ui/Header";
 import Footer from "./ui/Footer";
+import Link from "next/link";
 
 export default function RootLayout({
   children,
@@ -25,9 +26,11 @@ export default function RootLayout({
             {/* Layout UI */}
           </div>
           <div className="relative min-h-screen flex flex-col">
-            <div className="flex justify-center sticky inset-x-0 top-0 block">
-              <Header pageTitle="Ben Sweeney" links={nav} />
-            </div>
+            <Link href={"/"}>
+              <div className="flex justify-center sticky inset-x-0 top-0 block">
+                <Header pageTitle="Ben Sweeney" links={nav} />
+              </div>
+            </Link>
             <div className="flex-grow">
               <div className="grid grid-cols-1 place-items-start justify-items-center block space-y-4">
                 {children}
