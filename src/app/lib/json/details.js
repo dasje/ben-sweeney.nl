@@ -60,9 +60,30 @@ const details = {
     ],
     otherExperience: [
       {
-        instituteName: "",
-        years: "",
-        role: "",
+        instituteName: "Waterstones Booksellers",
+        years: "Jul 2017 - Jul 2021",
+        role: "Lead Bookseller",
+        tools: "",
+        description: "",
+      },
+      {
+        instituteName: "Strand Books",
+        years: "Apr 2016 - Jun 2017",
+        role: "Bookseller",
+        tools: "",
+        description: "",
+      },
+      {
+        instituteName: "Barcant Beardon Ltd",
+        years: "May 2015 - Jan 2016",
+        role: "Administrator",
+        tools: "",
+        description: "",
+      },
+      {
+        instituteName: "Self Employed",
+        years: "May 2014 - May 2015",
+        role: "English (EFL) Tutor",
         tools: "",
         description: "",
       },
@@ -73,15 +94,16 @@ const details = {
         studied: "Full stack development (Docker, React, FastAPI)",
       },
       {
+        instituteName: "TEFLLab",
+        studied:
+          "CELTA (Cambridge Certificate of Teaching English to Speakers of Other Lnaguages)",
+      },
+      {
         instituteName: "Westminster University",
-        studied: "English Language and Literature",
+        studied: "Bachelor of English Language and Literature",
       },
     ],
     courses: [
-      {
-        studied: "Test Driven Development Specialization",
-        instituteName: "LearnQuest @ Coursera",
-      },
       {
         studied: "Programming with Google Go Specialization",
         instituteName: "University of California, Irvine @ Coursera",
@@ -89,6 +111,26 @@ const details = {
       {
         studied: "Core Java",
         instituteName: "LearnQuest @ Coursera",
+      },
+      {
+        studied: "Test Driven Development Specialization",
+        instituteName: "LearnQuest @ Coursera",
+      },
+      {
+        studied: "Data Science Math Skills",
+        instituteName: "Duke University @ Coursera",
+      },
+      {
+        studied: "Python 3 Programming Specialization",
+        instituteName: "University of Michigan @ Coursera",
+      },
+      {
+        studied: "Web Application Technologies and Django",
+        instituteName: "University of California, Davis @ Coursera",
+      },
+      {
+        studied: "SQL for Data Science",
+        instituteName: "Dniversity of Michigan @ Coursera",
       },
     ],
   },
