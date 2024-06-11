@@ -44,7 +44,7 @@ const details = {
   achievements: {
     experience: [
       {
-        instituteName: "PriceWaterhouse Coopers (PwC Nederland)",
+        instituteName: "PriceWaterhouseCoopers (PwC Nederland)",
         years: "Dec 2022 - Feb 2024",
         role: "Senior Developer",
         tools: "Azure, Python, Javascript, Docker, Kubernetes",

@@ -18,7 +18,7 @@ const ProgressBar = ({ skillName, progressPercentage }: ProgessBarsProps) => {
             progressPercentage < 70 ? "bg-red-600" : "bg-green-600"
           }`}
         >
-          <div className="grid grid-cols-2 gap-2 text-white font-semibold">
+          <div className="grid grid-cols-2 gap-2 text-white font-semibold tracking-wide font-light">
             <div className="md:place-self-start pl-2">{skillName}</div>
             <div className="md:place-self-end pr-2 text-black md:text-white text-right">
               {progressPercentage}%
