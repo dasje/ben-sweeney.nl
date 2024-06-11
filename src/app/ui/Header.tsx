@@ -24,7 +24,7 @@ const Header = (props: HeaderProps) => {
   ));
   return (
     <div className="flex-row p-4 w-11/12 md:w-10/12 bg-bsCardBackgroundColor border-solid border-8 rounded-3xl m-4">
-      <div className="font-bold text-center text-fourthcolor tracking-wider text-3xl p-1">
+      <div className="font-bold text-center text-fourthcolor tracking-wider text-3xl p-1 pb-2">
         <h1>{props.pageTitle}</h1>
       </div>
       {props.subtitle && (
