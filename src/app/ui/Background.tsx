@@ -39,7 +39,7 @@ export default function Background() {
       fullScreen: { enable: true, zIndex: -10 },
       background: {
         color: {
-          value: "#e36414",
+          value: "#5f0f40",
         },
       },
       fpsLimit: 120,

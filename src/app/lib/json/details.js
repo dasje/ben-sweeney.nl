@@ -59,16 +59,16 @@ const details = {
     ],
     courses: [
       {
-        courseName: "Test Driven Development Specialization",
-        instituteName: "LearnQuest",
+        studied: "Test Driven Development Specialization",
+        instituteName: "LearnQuest @ Coursera",
       },
       {
-        courseName: "Programming with Google Go Specialization",
-        instituteName: "University of California, Irvine",
+        studied: "Programming with Google Go Specialization",
+        instituteName: "University of California, Irvine @ Coursera",
       },
       {
-        courseName: "Core Java",
-        instituteName: "LearnQuest",
+        studied: "Core Java",
+        instituteName: "LearnQuest @ Coursera",
       },
     ],
   },
