@@ -2,7 +2,7 @@
 
 import Background from "./ui/Background";
 import "@/app/globals.css";
-import { inter, chauPhilomene } from "@/app/ui/fonts";
+import { chauPhilomene } from "@/app/ui/fonts";
 import Header from "./ui/Header";
 import Footer from "./ui/Footer";
 import Link from "next/link";
@@ -12,11 +12,6 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const nav = [
-    { pageName: "About", pageUrl: "/pages/cv/about" },
-    { pageName: "Skills", pageUrl: "/pages/cv/skills" },
-    { pageName: "Experience", pageUrl: "/pages/cv/experience" },
-  ];
   return (
     <html lang="en">
       <body className={`${chauPhilomene.className} antialiased`}>
@@ -26,11 +21,9 @@ export default function RootLayout({
             {/* Layout UI */}
           </div>
           <div className="relative min-h-screen flex flex-col">
-            <Link href={"/"}>
-              <div className="flex justify-center sticky inset-x-0 top-0 block">
-                <Header pageTitle="Ben Sweeney" links={nav} />
-              </div>
-            </Link>
+            <div className="flex justify-center sticky inset-x-0 top-0 block">
+              <Header pageTitle="Ben Sweeney" />
+            </div>
             <div className="flex-grow">
               <div className="grid grid-cols-1 place-items-start justify-items-center block space-y-4">
                 {children}

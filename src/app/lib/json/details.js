@@ -130,7 +130,7 @@ const details = {
       },
       {
         studied: "SQL for Data Science",
-        instituteName: "Dniversity of Michigan @ Coursera",
+        instituteName: "University of Michigan @ Coursera",
       },
     ],
   },

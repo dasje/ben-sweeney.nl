@@ -1,32 +1,50 @@
 import "@/app/globals.css";
-import { title } from "process";
 import React from "react";
 import Button from "./Button";
 import Link from "next/link";
+import { useEffect, useState } from "react";
+import sitemap from "./../lib/json/sitemap";
+
+type navDetail = { pageName: string; pageUrl: string; children: navDetail[] };
 
 interface HeaderProps {
   pageTitle: string;
   subtitle?: string;
-  links: {
-    pageName: string;
-    pageUrl: string;
-  }[];
   children?: React.ReactNode;
 }
 
 const Header = (props: HeaderProps) => {
-  const listButtons = props.links.map((item, idx) => (
+  const [pt, setPt] = useState<string>(props.pageTitle);
+  const [currentLinks, setCurrentLinks] = useState<navDetail[]>(
+    sitemap.home.children
+  );
+  const listButtons = currentLinks.map((item, idx) => (
     <div className="place-content-center" key={idx}>
       <Link href={item.pageUrl}>
-        <Button textToDisplay={item.pageName} click={() => {}} />
+        <Button
+          textToDisplay={item.pageName}
+          click={() => {
+            item.children.length > 0 ? setCurrentLinks(item.children) : {};
+          }}
+        />
       </Link>
     </div>
   ));
   return (
     <div className="flex-row p-4 w-11/12 md:w-10/12 bg-bsCardBackgroundColor border-solid border-8 rounded-3xl m-4">
-      <div className="font-bold text-center text-fourthcolor tracking-wider text-3xl p-1 pb-2">
-        <h1>{props.pageTitle}</h1>
-      </div>
+      <Link href={"/"}>
+        <div
+          className="font-bold text-center text-fourthcolor tracking-wider text-3xl p-1 pb-2"
+          onClick={() => setCurrentLinks(sitemap.home.children)}
+        >
+          <h1
+            onMouseOver={() => setPt("Home")}
+            onMouseLeave={() => setPt(props.pageTitle)}
+          >
+            {pt}
+          </h1>
+        </div>
+      </Link>
       {props.subtitle && (
         <div className="font-bold text-center text-fourthcolor tracking-wider text-xl p-1">
           <h2>{props.subtitle}</h2>
