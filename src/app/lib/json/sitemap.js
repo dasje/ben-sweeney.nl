@@ -19,7 +19,24 @@ const sitemap = {
       {
         pageName: "Portfolio",
         pageUrl: "/pages/portfolio",
-        children: [],
+        children: [
+          {
+            pageName: "Art",
+            pageUrl: "/pages/portfolio/art",
+            children: [
+              {
+                pageName: "Animation",
+                pageUrl: "/pages/portfolio/art/animation",
+                children: [],
+              },
+              {
+                pageName: "Drawing",
+                pageUrl: "/pages/portfolio/art/drawing",
+                children: [],
+              },
+            ],
+          },
+        ],
       },
     ],
   },
