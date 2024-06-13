@@ -7,10 +7,10 @@ import { link } from "fs";
 
 const Footer = () => {
   return (
-    <div className="flex flex-col p-4 bg-bsCardBackgroundColor md:w-3/5 border-solid border-8 rounded-3xl m-4 text-white">
+    <div className="flex flex-col p-2 bg-bsCardBackgroundColor md:w-3/5 border-solid border-8 rounded-3xl m-4 text-white">
       <div className="text-center">{details.contact.email}</div>
       <div className="flex flex-row">
-        <div className="basis-full md:basis-1/2 p-2 w-2/5 m-4 content-center">
+        <div className="basis-full md:basis-1/2 w-2/5 m-4 content-center">
           <div className="text-right">
             {details.contact.street} {details.contact.number}
           </div>
@@ -19,7 +19,7 @@ const Footer = () => {
           </div>
           <div className="text-right">{details.contact.country}</div>
         </div>
-        <div className="basis-full md:basis-1/2 p-2 w-2/5 m-4 content-center">
+        <div className="basis-full md:basis-1/2 w-2/5 m-4 content-center">
           <Link href={details.contact.github}>
             <Image alt="GitHub Logo" src={githubLogo} />
           </Link>

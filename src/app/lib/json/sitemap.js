@@ -20,6 +20,7 @@ const sitemap = {
         pageName: "Portfolio",
         pageUrl: "/pages/portfolio",
         children: [
+          { pageName: "Code", pageUrl: "/pages/portfolio/code", children: [] },
           {
             pageName: "Art",
             pageUrl: "/pages/portfolio/art",
@@ -29,11 +30,16 @@ const sitemap = {
                 pageUrl: "/pages/portfolio/art/animation",
                 children: [],
               },
-              {
-                pageName: "Drawing",
-                pageUrl: "/pages/portfolio/art/drawing",
-                children: [],
-              },
+              //   {
+              //     pageName: "Motion Graphics",
+              //     pageUrl: "/pages/portfolio/art/motion-graphics",
+              //     children: [],
+              //   },
+              //   {
+              //     pageName: "Drawing",
+              //     pageUrl: "/pages/portfolio/art/drawing",
+              //     children: [],
+              //   },
             ],
           },
         ],

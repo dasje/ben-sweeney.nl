@@ -15,30 +15,108 @@ const details = {
     {
       skillName: "Python",
       progressPercentage: 80,
+      librariesFrameworks: [
+        {
+          skillName: "FastAPI",
+          progressPercentage: 95,
+        },
+        {
+          skillName: "Pandas",
+          progressPercentage: 90,
+        },
+        {
+          skillName: "Pandera",
+          progressPercentage: 80,
+        },
+        {
+          skillName: "Polars",
+          progressPercentage: 80,
+        },
+      ],
     },
     {
       skillName: "JavaScript",
       progressPercentage: 75,
+      librariesFrameworks: [],
     },
     {
       skillName: "TypeScript",
       progressPercentage: 70,
+      librariesFrameworks: [],
     },
     {
       skillName: "SQL",
       progressPercentage: 90,
+      librariesFrameworks: [
+        {
+          skillName: "PostgreSQL",
+          progressPercentage: 80,
+        },
+        {
+          skillName: "Microsoft SQL Server",
+          progressPercentage: 70,
+        },
+      ],
+    },
+    {
+      skillName: "Docker",
+      progressPercentage: 80,
+      librariesFrameworks: [],
+    },
+    {
+      skillName: "Kubernetes",
+      progressPercentage: 70,
+      librariesFrameworks: [],
+    },
+    {
+      skillName: "Azure Services",
+      progressPercentage: 70,
+      librariesFrameworks: [
+        {
+          skillName: "AzureSQL",
+          progressPercentage: 90,
+        },
+        {
+          skillName: "Azure Service Bus",
+          progressPercentage: 90,
+        },
+        {
+          skillName: "Azure Storage",
+          progressPercentage: 90,
+        },
+        {
+          skillName: "Azure Kubernetes Services",
+          progressPercentage: 70,
+        },
+        {
+          skillName: "Azure Containers",
+          progressPercentage: 70,
+        },
+      ],
     },
     {
       skillName: "Java",
       progressPercentage: 40,
+      librariesFrameworks: [],
     },
     {
       skillName: "Kotlin",
-      progressPercentage: 50,
+      progressPercentage: 60,
+      librariesFrameworks: [
+        {
+          skillName: "Ktor",
+          progressPercentage: 80,
+        },
+        {
+          skillName: "Koin",
+          progressPercentage: 70,
+        },
+      ],
     },
     {
       skillName: "Go",
       progressPercentage: 40,
+      librariesFrameworks: [],
     },
   ],
   achievements: {

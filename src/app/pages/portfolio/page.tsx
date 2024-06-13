@@ -1,13 +1,13 @@
 "use client";
 
 import Card from "../../ui/Card";
-import details from "../../lib/json/details";
+import portfolio from "../../lib/json/portfolio";
 
 export default function Page() {
   return (
-    <Card title="Overview">
+    <Card>
       <div className="bg-thirdcolor p-5 rounded-2xl text-white font-light tracking-wide">
-        {/* {details.aboutText} */}Overview of projects
+        {portfolio.portfolioOverview}
       </div>
     </Card>
   );

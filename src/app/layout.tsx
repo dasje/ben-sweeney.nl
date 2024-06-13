@@ -21,15 +21,15 @@ export default function RootLayout({
             {/* Layout UI */}
           </div>
           <div className="relative min-h-screen flex flex-col">
-            <div className="flex justify-center sticky inset-x-0 top-0 block">
+            <div className="z-50 flex justify-center sticky inset-x-0 top-0 block">
               <Header pageTitle="Ben Sweeney" />
             </div>
             <div className="flex-grow">
-              <div className="grid grid-cols-1 place-items-start justify-items-center block space-y-4">
+              <div className="z-10 grid grid-cols-1 place-items-start justify-items-center block space-y-4">
                 {children}
               </div>
             </div>
-            <div className="flex justify-center md:sticky inset-x-0 bottom-0 block">
+            <div className="z-50 flex justify-center md:sticky inset-x-0 bottom-0 block">
               <Footer />
             </div>
           </div>
