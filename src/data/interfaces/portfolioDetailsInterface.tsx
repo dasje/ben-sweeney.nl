@@ -10,7 +10,7 @@ export default interface portfolioDetails {
       tech: string[];
     }[];
   };
-  art: [];
+  art: { artOverview: string; projects: [] };
   drawing: [];
   animation: {
     animationOverview: string;

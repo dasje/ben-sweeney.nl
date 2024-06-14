@@ -26,7 +26,7 @@
       }
     ]
   },
-  "art": [],
+  "art": { "artOverview": "", "projects": [] },
   "drawing": [],
   "animation": {
     "animationOverview": "My desire to animate created my interest in coding, since I primarily learned coding to access object manipulation in Adobe Flash. Since then, my interest in animation has expanded greatly, particularly in the area of character animation.",
