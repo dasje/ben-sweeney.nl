@@ -52,7 +52,15 @@ const Header = (props: HeaderProps) => {
           <h2>{props.subtitle}</h2>
         </div>
       )}
-      <div className="flex justify-center space-x-4">{listButtons}</div>
+      <div className="flex justify-center space-x-4">
+        <Link href={"/"}>
+          <Button
+            textToDisplay="Home"
+            click={() => setCurrentLinks(sitemap.home.children)}
+          />
+        </Link>
+        {listButtons}
+      </div>
 
       {props.children && <div>{props.children}</div>}
     </div>
