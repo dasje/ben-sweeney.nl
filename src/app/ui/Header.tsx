@@ -52,7 +52,7 @@ const Header = (props: HeaderProps) => {
           <h2>{props.subtitle}</h2>
         </div>
       )}
-      <div className="flex justify-center space-x-4">
+      <div className="flex md:justify-center space-x-4 overflow-x-auto -webkit-overflow-scrolling: auto; -webkit-overflow-scrolling: auto;">
         <Link href={"/"}>
           <Button
             textToDisplay="Home"
