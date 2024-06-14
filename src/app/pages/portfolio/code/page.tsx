@@ -1,10 +1,12 @@
 import Card from "../../../ui/Card";
-import portfolioDetails from "@/app/lib/json/portfolio";
+import * as portfolio from "@/data/json/portfolioDetails.json";
+import portfolioDetailsInterface from "@/data/interfaces/portfolioDetailsInterface";
 import PortfolioItemContainer from "@/app/ui/PortfolioItemContainer";
 import Image from "next/image";
 import Link from "next/link";
 
 export default function Page() {
+  const portfolioDetails = portfolio as portfolioDetailsInterface;
   const listProjects = portfolioDetails.code.projects.map((item, idx) => (
     <PortfolioItemContainer key={idx} title={item.projectName}>
       <div className="grid grid-cols-1 md:grid-cols-5 gap-4 justify-items-center">

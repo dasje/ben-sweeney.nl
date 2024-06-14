@@ -1,8 +1,3 @@
-import { useState } from "react";
-import { Progress } from "@material-tailwind/react";
-import type { ProgressStylesType } from "@material-tailwind/react";
-import Card from "./Card";
-
 interface ProgessBarsProps {
   skillName: string;
   progressPercentage: number;

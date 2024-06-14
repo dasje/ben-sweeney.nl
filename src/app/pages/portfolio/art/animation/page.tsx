@@ -1,9 +1,11 @@
 import Container from "@/app/ui/Container";
 import Card from "../../../../ui/Card";
-import portfolioDetails from "@/app/lib/json/portfolio";
+import * as portfolio from "@/data/json/portfolioDetails.json";
+import portfolioDetailsInterface from "@/data/interfaces/portfolioDetailsInterface";
 import PortfolioItemContainer from "@/app/ui/PortfolioItemContainer";
 
 export default function Page() {
+  const portfolioDetails = portfolio as portfolioDetailsInterface;
   const embedYoutube = (link: string) => {
     return (
       <div className="aspect-w-16 aspect-h-9">
