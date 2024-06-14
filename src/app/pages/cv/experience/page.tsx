@@ -1,12 +1,13 @@
 "use client";
 
-import Card from "../../../ui/Card";
-import details from "../../../lib/json/details";
+import Card from "@/app/ui/Card";
+import * as deets from "@/data/json/details.json";
+import detailsInterface from "@/data/interfaces/detailsInterface";
 import Experience from "@/app/ui/Experience";
 import Education from "@/app/ui/Education";
-import Container from "@/app/ui/Container";
 
 export default function Page() {
+  const details = deets as detailsInterface;
   return (
     <>
       <Card title="Experience">

@@ -3,7 +3,8 @@ import React from "react";
 import Button from "./Button";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import sitemap from "./../lib/json/sitemap";
+import * as sitemapDetails from "@/data/json/sitemap.json";
+import sitemapInterface from "@/data/interfaces/sitemapInterface";
 
 type navDetail = { pageName: string; pageUrl: string; children: navDetail[] };
 
@@ -14,6 +15,7 @@ interface HeaderProps {
 }
 
 const Header = (props: HeaderProps) => {
+  const sitemap = sitemapDetails as sitemapInterface;
   const [pt, setPt] = useState<string>(props.pageTitle);
   const [currentLinks, setCurrentLinks] = useState<navDetail[]>(
     sitemap.home.children
