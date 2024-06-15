@@ -136,7 +136,7 @@
         "years": "Oct 2021 - Nov 2022",
         "role": "Developer",
         "tools": "Azure, Python, Javascript, Docker, Kubernetes",
-        "description": ""
+        "description": []
       }
     ],
     "otherExperience": [
@@ -145,28 +145,28 @@
         "years": "Jul 2017 - Jul 2021",
         "role": "Lead Bookseller",
         "tools": "",
-        "description": ""
+        "description": []
       },
       {
         "instituteName": "Strand Books",
         "years": "Apr 2016 - Jun 2017",
         "role": "Bookseller",
         "tools": "",
-        "description": ""
+        "description": []
       },
       {
         "instituteName": "Barcant Beardon Ltd",
         "years": "May 2015 - Jan 2016",
         "role": "Administrator",
         "tools": "",
-        "description": ""
+        "description": []
       },
       {
         "instituteName": "Self Employed",
         "years": "May 2014 - May 2015",
         "role": "English (EFL) Tutor",
         "tools": "",
-        "description": ""
+        "description": []
       }
     ],
     "education": [
