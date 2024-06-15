@@ -8,7 +8,7 @@ interface ExperienceProps {
     years: string;
     role: string;
     tools: string;
-    description: string;
+    description: string[];
   }[];
 }
 

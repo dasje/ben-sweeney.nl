@@ -25,14 +25,14 @@ export default interface DetailsType {
       years: string;
       role: string;
       tools: string;
-      description: string;
+      description: string[];
     }[];
     otherExperience: {
       instituteName: string;
       years: string;
       role: string;
       tools: string;
-      description: string;
+      description: string[];
     }[];
     education: {
       instituteName: string;

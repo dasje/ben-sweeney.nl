@@ -126,7 +126,10 @@
         "years": "Dec 2022 - Feb 2024",
         "role": "Senior Developer",
         "tools": "Azure, Python, Javascript, Docker, Kubernetes",
-        "description": ""
+        "description": [
+          "This was a challenging role that encompassed a wide range of disciplines.",
+          "The project I am proudest of was an application that ingested large financial datasets, parsed the interst products, recalculated the interest and provided dashboards with summaries and analyses to help identify outliers. On this project I was lead developer, and primarily responsible for MVP code, requirements, database handling, testing and deployment."
+        ]
       },
       {
         "instituteName": "YoungCoders @ PwC Nederland",
