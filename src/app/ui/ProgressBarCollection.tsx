@@ -16,7 +16,7 @@ const ProgressBarCollection = ({
   collectionName,
   data,
 }: ProgressBarCollectionProps) => {
-  const [revealLibraries, setRevealLibraries] = useState<number | null>(null);
+  const [revealLibraries, setRevealLibraries] = useState<number[]>([]);
   const [currentData, setCurrentData] = useState<IncomingDataType[]>(data);
 
   const sortData = () => {
@@ -33,29 +33,32 @@ const ProgressBarCollection = ({
     <div
       className="grid grid-cols-1 place-content-center"
       key={idx}
-      onMouseOver={() => setRevealLibraries(idx)}
-      onMouseDown={() => setRevealLibraries(idx)}
-      onMouseLeave={() => setRevealLibraries(null)}
-      onTouchStart={() => setRevealLibraries(idx)}
-      onTouchEnd={() => setRevealLibraries(null)}
+      onMouseDown={() =>
+        setRevealLibraries(
+          revealLibraries.indexOf(idx) === -1
+            ? [...revealLibraries, idx]
+            : revealLibraries.filter((e) => e !== idx)
+        )
+      }
     >
       <ProgressBar
         skillName={item.skillName}
         progressPercentage={item.progressPercentage}
         librariesFrameworks={item.librariesFrameworks}
       />
-      {item.librariesFrameworks.length > 0 && revealLibraries == idx && (
-        <div className="m-2 p-1 w-10/12 bg-bsCardChildrenBackgroundColor border-solid border rounded-xl place-self-center text-sm">
-          {item.librariesFrameworks.map((item, idx) => (
-            <ProgressBar
-              key={idx}
-              skillName={item.skillName}
-              progressPercentage={item.progressPercentage}
-              librariesFrameworks={[]}
-            />
-          ))}
-        </div>
-      )}
+      {item.librariesFrameworks.length > 0 &&
+        revealLibraries.indexOf(idx) !== -1 && (
+          <div className="m-2 p-1 w-10/12 bg-bsCardChildrenBackgroundColor border-solid border rounded-xl place-self-center text-sm">
+            {item.librariesFrameworks.map((item, idx) => (
+              <ProgressBar
+                key={idx}
+                skillName={item.skillName}
+                progressPercentage={item.progressPercentage}
+                librariesFrameworks={[]}
+              />
+            ))}
+          </div>
+        )}
     </div>
   ));
 
