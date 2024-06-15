@@ -45,7 +45,7 @@ const ProgressBarCollection = ({
         librariesFrameworks={item.librariesFrameworks}
       />
       {item.librariesFrameworks.length > 0 && revealLibraries == idx && (
-        <div className="m-2 p-1 w-10/12 bg-bsCardChildrenBackgroundColor border-solid border-2 rounded-xl place-self-center text-sm">
+        <div className="m-2 p-1 w-10/12 bg-bsCardChildrenBackgroundColor border-solid border rounded-xl place-self-center text-sm">
           {item.librariesFrameworks.map((item, idx) => (
             <ProgressBar
               key={idx}

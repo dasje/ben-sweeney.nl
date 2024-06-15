@@ -33,18 +33,13 @@ const Header = (props: HeaderProps) => {
     </div>
   ));
   return (
-    <div className="z-50 flex-row p-4 w-11/12 md:w-10/12 bg-bsCardBackgroundColor border-solid border-8 rounded-3xl m-4">
+    <div className="z-50 flex-row p-4 w-11/12 md:w-10/12 bg-bsCardBackgroundColor border-solid border-2 rounded-3xl m-4">
       <Link href={"/"}>
         <div
           className="font-bold text-center text-fourthcolor tracking-wider text-3xl p-1 pb-2"
           onClick={() => setCurrentLinks(sitemap.home.children)}
         >
-          <h1
-            onMouseOver={() => setPt("Home")}
-            onMouseLeave={() => setPt(props.pageTitle)}
-          >
-            {pt}
-          </h1>
+          <h1 className="hover:animate-pulse">{pt}</h1>
         </div>
       </Link>
       {props.subtitle && (
@@ -56,6 +51,7 @@ const Header = (props: HeaderProps) => {
         <Link href={"/"}>
           <Button
             textToDisplay="Home"
+            focusButton={true}
             click={() => setCurrentLinks(sitemap.home.children)}
           />
         </Link>
