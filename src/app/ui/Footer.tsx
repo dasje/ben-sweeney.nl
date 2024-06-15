@@ -8,7 +8,7 @@ import linkedInLogo from "../lib/icons/icons8-linkedin-50.png";
 const Footer = () => {
   const details = deets as detailsInterface;
   return (
-    <div className="flex flex-col p-2 bg-bsCardBackgroundColor md:w-3/5 border-solid border-8 rounded-3xl m-4 text-white">
+    <div className="flex flex-col p-2 bg-bsCardBackgroundColor md:w-3/5 border-solid border-2 rounded-3xl m-4 text-white">
       <div className="text-center">{details.contact.email}</div>
       <div className="flex flex-row">
         <div className="basis-full md:basis-1/2 w-2/5 m-4 content-center">

@@ -21,7 +21,7 @@ const ExperienceRack = ({
   const [revealDescription, setRevealDescription] = useState<boolean>(false);
 
   return (
-    <div className="grid gird-cols-1 md:grid-cols-3 bg-secondcolor border-solid border-8 rounded-xl px-5 py-5 md:pt-2 pb-2.5">
+    <div className="grid gird-cols-1 md:grid-cols-3 bg-secondcolor border-solid border-2 rounded-xl px-5 py-5 md:pt-2 pb-2.5">
       <div className="col-span-2 font-semibold text-lg text-left md:text-white text-thirdcolor tracking-wide">
         <div>{instituteName}</div>
         <div className="font-light text-left text-white tracking-wide">
