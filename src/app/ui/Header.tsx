@@ -17,27 +17,82 @@ interface HeaderProps {
 const Header = (props: HeaderProps) => {
   const sitemap = sitemapDetails as sitemapInterface;
   const [pt, setPt] = useState<string>(props.pageTitle);
-  const [currentLinks, setCurrentLinks] = useState<navDetail[]>(
-    sitemap.home.children
+
+  const headerColors = [
+    "bg-bsHeaderColorOne",
+    "bg-bsHeaderColorTwo",
+    "bg-bsHeaderColorThree",
+    "bg-bsHeaderColorFour",
+  ];
+
+  const [previousLinks, setPreviousLinks] = useState<navDetail[]>([]);
+  const [currentLinks, setCurrentLinks] = useState<navDetail | null>(
+    sitemap.home
   );
-  const listButtons = currentLinks.map((item, idx) => (
-    <div className="place-content-center" key={idx}>
-      <Link href={item.pageUrl}>
-        <Button
-          textToDisplay={item.pageName}
-          click={() => {
-            item.children.length > 0 ? setCurrentLinks(item.children) : {};
-          }}
-        />
-      </Link>
+  const [revealChildPages, setRevealChildPages] = useState<number | null>(null);
+
+  const listButtons = currentLinks?.children.map((item, idx) => (
+    <div key={idx} className="group grid grid-cols-1">
+      <div
+        className="group-hover:sticky place-content-center col-span-1 p-1 place-self-start"
+        onMouseEnter={() => setRevealChildPages(idx)}
+        onClick={() => setRevealChildPages(idx)}
+      >
+        <Link href={currentLinks.children[idx].pageUrl}>
+          <Button
+            textToDisplay={item.pageName}
+            click={() => {
+              console.log(item);
+              setPreviousLinks([...previousLinks, currentLinks]);
+              currentLinks.children[idx].children.length > 0
+                ? setCurrentLinks(currentLinks.children[idx])
+                : {};
+            }}
+          />
+        </Link>
+      </div>
+      {revealChildPages === idx &&
+        currentLinks.children[idx].children.length > 0 && (
+          <div className="hidden group-hover:contents group-hover:isolate">
+            <div
+              className={`absolute ${
+                headerColors[previousLinks.length]
+              } my-10 space-y-2 p-1 border-r border-l border-b border-dashed rounded-b-lg`}
+            >
+              {currentLinks.children[idx].children.map((i, k) => (
+                <div key={k} className="place-content-center col-span-1">
+                  <Link href={i.pageUrl}>
+                    <Button
+                      textToDisplay={i.pageName}
+                      click={() => {
+                        console.log(item);
+                        setPreviousLinks([...previousLinks, currentLinks]);
+                        i.children.length > 0
+                          ? setCurrentLinks(i)
+                          : setCurrentLinks(null);
+                      }}
+                    />
+                  </Link>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
     </div>
   ));
   return (
-    <div className="z-50 flex-row p-4 w-11/12 md:w-10/12 bg-bsCardBackgroundColor border-solid border-2 rounded-3xl m-4">
+    <div
+      className={`relative z-50 flex-row p-4 w-11/12 md:w-10/12 ${
+        headerColors[previousLinks.length]
+      } border-solid border-2 rounded-3xl m-4`}
+    >
       <Link href={"/"}>
         <div
           className="font-bold text-center text-fourthcolor tracking-wider text-3xl p-1 pb-2"
-          onClick={() => setCurrentLinks(sitemap.home.children)}
+          onClick={() => {
+            setCurrentLinks(sitemap.home);
+            setPreviousLinks([]);
+          }}
         >
           <h1 className="hover:animate-pulse">{pt}</h1>
         </div>
@@ -48,16 +103,21 @@ const Header = (props: HeaderProps) => {
         </div>
       )}
       <div className="flex md:justify-center space-x-4 overflow-x-auto -webkit-overflow-scrolling: auto; -webkit-overflow-scrolling: auto;">
-        <Link href={"/"}>
-          <Button
-            textToDisplay="Home"
-            focusButton={true}
-            click={() => setCurrentLinks(sitemap.home.children)}
-          />
-        </Link>
-        {listButtons}
+        {previousLinks.slice(-1)[0] && (
+          <Link href={previousLinks.slice(-1)[0].pageUrl}>
+            <Button
+              focusButton={true}
+              click={() => {
+                setCurrentLinks(previousLinks.slice(-1)[0]);
+                setPreviousLinks(previousLinks.slice(0, -1));
+              }}
+              direction="backward"
+              textToDisplay={previousLinks.slice(-1)[0].pageName}
+            />
+          </Link>
+        )}
+        {currentLinks && listButtons}
       </div>
-
       {props.children && <div>{props.children}</div>}
     </div>
   );
