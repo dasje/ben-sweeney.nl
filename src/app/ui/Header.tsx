@@ -47,9 +47,9 @@ const Header = (props: HeaderProps) => {
   ));
 
   const listButtons = currentLinks?.children.map((item, idx) => (
-    <div key={idx} className="group">
+    <div key={idx} className="group md:grid md:grid-cols-1">
       <div
-        className="place-content-center p-1 place-self-start"
+        className="md:group-hover:sticky place-content-center p-1 place-self-start"
         onMouseEnter={() => setRevealChildPages(idx)}
         onClick={() => setRevealChildPages(idx)}
       >
@@ -69,7 +69,7 @@ const Header = (props: HeaderProps) => {
       </div>
       {revealChildPages === idx &&
         currentLinks.children[idx].children.length > 0 && (
-          <div className="hidden group-hover:contents">
+          <div className="hidden group-hover:contents md:group-hover:isolate">
             <div
               className={`absolute ${
                 headerColors[previousLinks.length]
@@ -102,7 +102,7 @@ const Header = (props: HeaderProps) => {
   ));
   return (
     <div
-      className={`z-50 flex-row p-4 w-11/12 md:w-10/12 ${
+      className={`md:relative z-50 flex-row p-4 w-11/12 md:w-10/12 ${
         headerColors[previousLinks.length]
       } border-solid border-2 rounded-3xl m-4`}
     >
