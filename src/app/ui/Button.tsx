@@ -1,14 +1,27 @@
 import React from "react";
 import "@/app/globals.css";
+import Image from "next/image";
+import backwardArrow from "@/app/lib/icons/icons8-back-arrow-100.png";
+import downwardArrow from "@/app/lib/icons/icons8-down-arrow-100.png";
+import forwardArrow from "@/app/lib/icons/icons8-right-arrow-100.png";
+import upwardArrow from "@/app/lib/icons/icons8-chevron-up-100.png";
 
 interface ButtonProps {
-  textToDisplay: string;
+  textToDisplay?: string;
   buttonColor?: "first" | "second" | "third" | "fourth" | "fifth" | "sixth";
   textColor?: "white" | "black";
   focusButton?: boolean;
+  direction?: "forward" | "backward" | "upward" | "downward";
+  breadcrumb?: boolean;
   click: () => {} | void;
 }
 const Button = (props: ButtonProps) => {
+  const directionIcon = {
+    forward: ">",
+    backward: "<",
+    upward: "Up",
+    downward: "Down",
+  };
   const fontColor = {
     white: "text-white",
     black: "text-black",
@@ -22,21 +35,36 @@ const Button = (props: ButtonProps) => {
     sixth: "bg-sixthcolor",
   };
   return (
-    <div
-      className={`${
-        props.buttonColor ? background[props.buttonColor] : "bg-fifthcolor"
-      } border-solid ${
-        props.focusButton ? "border-2 mix-blend-screen" : "border"
-      } rounded-full m-2.5 hover:animate-pulse hover:bg-bsButtonHoverColor`}
-      onClick={props.click}
-    >
+    <div className="flex">
       <div
-        className={`font-semibold text-center ${
-          props.textColor ? fontColor[props.textColor] : "text-white"
-        } tracking-wider pl-5 pb-1 pr-5 pt-1`}
+        className={`${
+          props.buttonColor ? background[props.buttonColor] : "bg-fifthcolor"
+        } border-solid ${
+          props.focusButton ? "border-2 mix-blend-screen" : "border"
+        } rounded-full m-2.5 w-36 hover:animate-pulse hover:bg-bsButtonHoverColor flex justify-center`}
+        onClick={props.click}
       >
-        {props.textToDisplay}
+        {props.textToDisplay && (
+          <div
+            className={`font-semibold text-center ${
+              props.textColor ? fontColor[props.textColor] : "text-white"
+            } tracking-wider pl-5 pb-1 pr-5 pt-1`}
+          >
+            {props.textToDisplay}
+          </div>
+        )}
+
+        {}
       </div>
+      {props.direction && (
+        <div
+          className={`${
+            props.textColor ? fontColor[props.textColor] : "text-white"
+          } pl-2 pb-1 pt-2`}
+        >
+          {directionIcon[props.direction]}
+        </div>
+      )}
     </div>
   );
 };
