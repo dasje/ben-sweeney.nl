@@ -11,6 +11,9 @@ module.exports = {
   darkMode: false,
   theme: {
     extend: {
+      borderRadius: {
+        "i-border": "-9999px",
+      },
       colors: {
         firstcolor: "#5f0f40",
         secondcolor: "#9a031e",

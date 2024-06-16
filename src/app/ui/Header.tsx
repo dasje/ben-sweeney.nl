@@ -31,6 +31,21 @@ const Header = (props: HeaderProps) => {
   );
   const [revealChildPages, setRevealChildPages] = useState<number | null>(null);
 
+  const listBreadcrumbs = previousLinks.map((item, idx) => (
+    <Link key={idx} href={previousLinks.slice(-idx)[0].pageUrl}>
+      <Button
+        focusButton={true}
+        breadcrumb={true}
+        click={() => {
+          setCurrentLinks(previousLinks.slice(-idx)[0]);
+          setPreviousLinks(previousLinks.slice(0, -idx));
+        }}
+        direction="backward"
+        textToDisplay={previousLinks.slice(-idx)[0].pageName}
+      />
+    </Link>
+  ));
+
   const listButtons = currentLinks?.children.map((item, idx) => (
     <div key={idx} className="group grid grid-cols-1">
       <div
@@ -43,8 +58,12 @@ const Header = (props: HeaderProps) => {
             textToDisplay={item.pageName}
             click={() => {
               console.log(item);
-              setPreviousLinks([...previousLinks, currentLinks]);
-              currentLinks.children[idx].children.length > 0
+              console.log(currentLinks);
+              console.log(previousLinks);
+              !previousLinks.includes(currentLinks)
+                ? setPreviousLinks([...previousLinks, currentLinks])
+                : {};
+              item.children.length > 0
                 ? setCurrentLinks(currentLinks.children[idx])
                 : {};
             }}
@@ -65,11 +84,15 @@ const Header = (props: HeaderProps) => {
                     <Button
                       textToDisplay={i.pageName}
                       click={() => {
-                        console.log(item);
-                        setPreviousLinks([...previousLinks, currentLinks]);
+                        // console.log(item);
+                        setPreviousLinks([
+                          ...previousLinks,
+                          currentLinks,
+                          currentLinks.children[idx],
+                        ]);
                         i.children.length > 0
                           ? setCurrentLinks(i)
-                          : setCurrentLinks(null);
+                          : setCurrentLinks(currentLinks.children[idx]);
                       }}
                     />
                   </Link>
@@ -102,20 +125,8 @@ const Header = (props: HeaderProps) => {
           <h2>{props.subtitle}</h2>
         </div>
       )}
-      <div className="flex md:justify-center space-x-4 overflow-x-auto -webkit-overflow-scrolling: auto; -webkit-overflow-scrolling: auto;">
-        {previousLinks.slice(-1)[0] && (
-          <Link href={previousLinks.slice(-1)[0].pageUrl}>
-            <Button
-              focusButton={true}
-              click={() => {
-                setCurrentLinks(previousLinks.slice(-1)[0]);
-                setPreviousLinks(previousLinks.slice(0, -1));
-              }}
-              direction="backward"
-              textToDisplay={previousLinks.slice(-1)[0].pageName}
-            />
-          </Link>
-        )}
+      <div className="flex md:justify-center space-x-1 overflow-x-auto -webkit-overflow-scrolling: auto; -webkit-overflow-scrolling: auto;">
+        {previousLinks && listBreadcrumbs}
         {currentLinks && listButtons}
       </div>
       {props.children && <div>{props.children}</div>}
