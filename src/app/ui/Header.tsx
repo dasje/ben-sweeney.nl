@@ -2,7 +2,7 @@ import "@/app/globals.css";
 import React from "react";
 import Button from "./Button";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import * as sitemapDetails from "@/data/json/sitemap.json";
 import sitemapInterface from "@/data/interfaces/sitemapInterface";
 
@@ -47,9 +47,9 @@ const Header = (props: HeaderProps) => {
   ));
 
   const listButtons = currentLinks?.children.map((item, idx) => (
-    <div key={idx} className="group grid grid-cols-1">
+    <div key={idx} className="group">
       <div
-        className="group-hover:sticky place-content-center col-span-1 p-1 place-self-start"
+        className="place-content-center p-1 place-self-start"
         onMouseEnter={() => setRevealChildPages(idx)}
         onClick={() => setRevealChildPages(idx)}
       >
@@ -57,9 +57,6 @@ const Header = (props: HeaderProps) => {
           <Button
             textToDisplay={item.pageName}
             click={() => {
-              console.log(item);
-              console.log(currentLinks);
-              console.log(previousLinks);
               !previousLinks.includes(currentLinks)
                 ? setPreviousLinks([...previousLinks, currentLinks])
                 : {};
@@ -72,7 +69,7 @@ const Header = (props: HeaderProps) => {
       </div>
       {revealChildPages === idx &&
         currentLinks.children[idx].children.length > 0 && (
-          <div className="hidden group-hover:contents group-hover:isolate">
+          <div className="hidden group-hover:contents">
             <div
               className={`absolute ${
                 headerColors[previousLinks.length]
@@ -105,7 +102,7 @@ const Header = (props: HeaderProps) => {
   ));
   return (
     <div
-      className={`relative z-50 flex-row p-4 w-11/12 md:w-10/12 ${
+      className={`z-50 flex-row p-4 w-11/12 md:w-10/12 ${
         headerColors[previousLinks.length]
       } border-solid border-2 rounded-3xl m-4`}
     >
@@ -125,7 +122,7 @@ const Header = (props: HeaderProps) => {
           <h2>{props.subtitle}</h2>
         </div>
       )}
-      <div className="flex md:justify-center space-x-1 overflow-x-auto -webkit-overflow-scrolling: auto; -webkit-overflow-scrolling: auto;">
+      <div className="flex md:justify-center space-x-1 overflow-x-auto -webkit-overflow-scrolling: auto; touch-auto scrolling-touch">
         {previousLinks && listBreadcrumbs}
         {currentLinks && listButtons}
       </div>
