@@ -5,7 +5,7 @@
     "children": [
       {
         "pageName": "CV",
-        "pageUrl": "/pages/cv",
+        "pageUrl": "/pages/cv/about",
         "children": [
           { "pageName": "About", "pageUrl": "/pages/cv/about", "children": [] },
           {
@@ -36,6 +36,11 @@
               {
                 "pageName": "Animation",
                 "pageUrl": "/pages/portfolio/art/animation",
+                "children": []
+              },
+              {
+                "pageName": "Drawing",
+                "pageUrl": "/pages/portfolio/art/drawing",
                 "children": []
               }
             ]
