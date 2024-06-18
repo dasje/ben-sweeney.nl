@@ -79,18 +79,44 @@
         {
           "skillName": "Microsoft SQL Server",
           "progressPercentage": 70
+        },
+        {
+          "skillName": "SQLAlchemy",
+          "progressPercentage": 95
         }
       ]
     },
     {
-      "skillName": "Docker",
-      "progressPercentage": 80,
-      "librariesFrameworks": []
+      "skillName": "Containerization",
+      "progressPercentage": 70,
+      "librariesFrameworks": [
+        {
+          "skillName": "Docker",
+          "progressPercentage": 75
+        },
+        {
+          "skillName": "Test Containers",
+          "progressPercentage": 75
+        }
+      ]
     },
     {
-      "skillName": "Kubernetes",
+      "skillName": "Deployment",
       "progressPercentage": 70,
-      "librariesFrameworks": []
+      "librariesFrameworks": [
+        {
+          "skillName": "Kubernetes",
+          "progressPercentage": 70
+        },
+        {
+          "skillName": "Azure Kubernetes Services (AKS)",
+          "progressPercentage": 50
+        },
+        {
+          "skillName": "Docker",
+          "progressPercentage": 75
+        },
+      ]
     },
     {
       "skillName": "Azure Services",
