@@ -31,18 +31,38 @@
         {
           "skillName": "Polars",
           "progressPercentage": 80
+        },
+        {
+          "skillName": "Django",
+          "progressPercentage": 70
         }
       ]
     },
     {
-      "skillName": "JavaScript",
+      "skillName": "JavaScript/Typescript",
       "progressPercentage": 75,
-      "librariesFrameworks": []
-    },
-    {
-      "skillName": "TypeScript",
-      "progressPercentage": 70,
-      "librariesFrameworks": []
+      "librariesFrameworks": [
+        {
+          "skillName": "React.js",
+          "progressPercentage": 85
+        },
+        {
+          "skillName": "Bootstrap",
+          "progressPercentage": 85
+        },
+        {
+          "skillName": "Vue.js",
+          "progressPercentage": 70
+        },
+        {
+          "skillName": "Node.js",
+          "progressPercentage": 90
+        },
+        {
+          "skillName": "Next.js",
+          "progressPercentage": 90
+        }
+      ]
     },
     {
       "skillName": "SQL",
