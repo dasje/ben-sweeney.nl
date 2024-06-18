@@ -35,6 +35,10 @@
         {
           "skillName": "Django",
           "progressPercentage": 70
+        },
+        {
+          "skillName": "SQLAlchemy",
+          "progressPercentage": 95
         }
       ]
     },
