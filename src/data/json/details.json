@@ -31,18 +31,42 @@
         {
           "skillName": "Polars",
           "progressPercentage": 80
+        },
+        {
+          "skillName": "Django",
+          "progressPercentage": 70
+        },
+        {
+          "skillName": "SQLAlchemy",
+          "progressPercentage": 95
         }
       ]
     },
     {
-      "skillName": "JavaScript",
+      "skillName": "JavaScript/Typescript",
       "progressPercentage": 75,
-      "librariesFrameworks": []
-    },
-    {
-      "skillName": "TypeScript",
-      "progressPercentage": 70,
-      "librariesFrameworks": []
+      "librariesFrameworks": [
+        {
+          "skillName": "React.js",
+          "progressPercentage": 85
+        },
+        {
+          "skillName": "Bootstrap",
+          "progressPercentage": 85
+        },
+        {
+          "skillName": "Vue.js",
+          "progressPercentage": 70
+        },
+        {
+          "skillName": "Node.js",
+          "progressPercentage": 90
+        },
+        {
+          "skillName": "Next.js",
+          "progressPercentage": 90
+        }
+      ]
     },
     {
       "skillName": "SQL",
@@ -55,18 +79,48 @@
         {
           "skillName": "Microsoft SQL Server",
           "progressPercentage": 70
+        },
+        {
+          "skillName": "SQLAlchemy",
+          "progressPercentage": 95
         }
       ]
     },
     {
-      "skillName": "Docker",
-      "progressPercentage": 80,
-      "librariesFrameworks": []
+      "skillName": "Containerization",
+      "progressPercentage": 70,
+      "librariesFrameworks": [
+        {
+          "skillName": "Docker",
+          "progressPercentage": 75
+        },
+        {
+          "skillName": "Test Containers",
+          "progressPercentage": 75
+        }
+      ]
     },
     {
-      "skillName": "Kubernetes",
+      "skillName": "Deployment",
       "progressPercentage": 70,
-      "librariesFrameworks": []
+      "librariesFrameworks": [
+        {
+          "skillName": "Kubernetes",
+          "progressPercentage": 70
+        },
+        {
+          "skillName": "Azure Kubernetes Services (AKS)",
+          "progressPercentage": 50
+        },
+        {
+          "skillName": "Docker",
+          "progressPercentage": 75
+        },
+        {
+          "skillName": "Vercel",
+          "progressPercentage": 75
+        }
+      ]
     },
     {
       "skillName": "Azure Services",
@@ -97,7 +151,12 @@
     {
       "skillName": "Java",
       "progressPercentage": 40,
-      "librariesFrameworks": []
+      "librariesFrameworks": [
+        {
+          "skillName": "Spring",
+          "progressPercentage": 30
+        }
+      ]
     },
     {
       "skillName": "Kotlin",
@@ -124,19 +183,30 @@
       {
         "instituteName": "PriceWaterhouseCoopers (PwC Nederland)",
         "years": "Dec 2022 - Feb 2024",
-        "role": "Senior Developer",
-        "tools": "Azure, Python, Javascript, Docker, Kubernetes",
+        "role": "Medior/Senior Developer",
+        "tools": "Azure, Python, Javascript, Typescript, Docker, Kubernetes",
         "description": [
-          "This was a challenging role that encompassed a wide range of disciplines.",
-          "The project I am proudest of was an application that ingested large financial datasets, parsed the interst products, recalculated the interest and provided dashboards with summaries and analyses to help identify outliers. On this project I was lead developer, and primarily responsible for MVP code, requirements, database handling, testing and deployment."
+          "This was a continuation of the training role begun with my experience at Young Coders. It was a challenging role that encompassed a wide range of disciplines, and provided me with opportunities to expand both my technological knowledge and my training abilities.",
+          "In this role I took lead roles in the creation of two applications oriented on data ingestion and analysis. I was also part of a team spearheading the first integration of ChatGPT into a live product that parses public company accounts and confirms compliance with ESG rulings.",
+          "In my lead roles I was responsible for requirements gathering, data modeling, ETL pipelines, MVP front ends, and integration into existing platforms. In both cases my role included training junior developers; this took the shape of one-to-one sessions, walking through tasks, knowledge sharing sessions, providing meaningful pull request feedback, and maintaining standards in the code base.",
+          "Due to the way our teams were organised, I was responsible for the staging of the product and database setup for all the products I worked on."
         ]
       },
       {
         "instituteName": "YoungCoders @ PwC Nederland",
         "years": "Oct 2021 - Nov 2022",
         "role": "Developer",
-        "tools": "Azure, Python, Javascript, Docker, Kubernetes",
-        "description": []
+        "tools": "Azure, Python, Javascript, Typescript, Docker, Kubernetes",
+        "description": [
+          "Beginning with a six week bootcamp, in which we built a dashboard in which investors could view the current/historical values of their stocks and shares, the training moved immediately from the classroom to a placement in a developer team at PwC.",
+          "Here I built dashboards for auditors to analyse accounts for outliers and risks. Proof of concepts were designed in PowerBI and then built for internal platforms with front ends built in React, and data handling with Python.",
+          "In this role, I learned about product deployment with Azure Kubernetes, microservice design and infrastructure, and database setup. This was put into practice by integrating and deploying two apps on an internal platform.",
+          "Projects I worked on included:",
+          " - A product that used Tesseract to parse bank statements.",
+          " - An ETL pipeline for bank data related to interest products.",
+          " - A dashboard that reconciled accounts and provided interactive tables for exploring outliers.",
+          " - A product that parsed XBRL taxonomy prepared according to European Securities And Market Authorities guidelines."
+        ]
       }
     ],
     "otherExperience": [
