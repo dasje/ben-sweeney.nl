@@ -116,6 +116,10 @@
           "skillName": "Docker",
           "progressPercentage": 75
         },
+        {
+          "skillName": "Vercel",
+          "progressPercentage": 75
+        }
       ]
     },
     {
@@ -147,7 +151,12 @@
     {
       "skillName": "Java",
       "progressPercentage": 40,
-      "librariesFrameworks": []
+      "librariesFrameworks": [
+        {
+          "skillName": "Spring",
+          "progressPercentage": 30
+        }
+      ]
     },
     {
       "skillName": "Kotlin",
