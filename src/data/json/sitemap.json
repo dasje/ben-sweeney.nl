@@ -4,10 +4,9 @@
     "pageUrl": "/",
     "children": [
       {
-        "pageName": "CV",
-        "pageUrl": "/pages/cv/about",
+        "pageName": "Resume",
+        "pageUrl": "/pages/cv/experience",
         "children": [
-          { "pageName": "About", "pageUrl": "/pages/cv/about", "children": [] },
           {
             "pageName": "Skills",
             "pageUrl": "/pages/cv/skills",
