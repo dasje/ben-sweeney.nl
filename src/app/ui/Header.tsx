@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useState } from "react";
 import * as sitemapDetails from "@/data/json/sitemap.json";
 import sitemapInterface from "@/data/interfaces/sitemapInterface";
+import { usePathname } from "next/navigation";
 
 type navDetail = { pageName: string; pageUrl: string; children: navDetail[] };
 
@@ -16,13 +17,20 @@ interface HeaderProps {
 
 const Header = (props: HeaderProps) => {
   const sitemap = sitemapDetails as sitemapInterface;
+  const pathname = usePathname();
   const [pt, setPt] = useState<string>(props.pageTitle);
 
   const headerColors = [
-    "bg-bsHeaderColorOne",
-    "bg-bsHeaderColorTwo",
-    "bg-bsHeaderColorThree",
-    "bg-bsHeaderColorFour",
+    "bg-bgBackgroundColorOne",
+    "bg-bgBackgroundColorTwo",
+    "bg-bgBackgroundColorThree",
+    "bg-bgBackgroundColorFour",
+    "bg-bgBackgroundColorFive",
+    "bg-bgBackgroundColorSix",
+    "bg-bgBackgroundColorSeven",
+    "bg-bgBackgroundColorEight",
+    "bg-bgBackgroundColorNine",
+    "bg-bgBackgroundColorTen",
   ];
 
   const [previousLinks, setPreviousLinks] = useState<navDetail[]>([]);
@@ -32,7 +40,7 @@ const Header = (props: HeaderProps) => {
   const [revealChildPages, setRevealChildPages] = useState<number | null>(null);
 
   const listBreadcrumbs = previousLinks.map((item, idx) => (
-    <Link key={idx} href={previousLinks.slice(-idx)[0].pageUrl}>
+    <Link key={idx} href={previousLinks.slice(idx)[0].pageUrl}>
       <Button
         focusButton={true}
         breadcrumb={true}
@@ -41,15 +49,15 @@ const Header = (props: HeaderProps) => {
           setPreviousLinks(previousLinks.slice(0, -idx));
         }}
         direction="backward"
-        textToDisplay={previousLinks.slice(-idx)[0].pageName}
+        textToDisplay={item.pageName}
       />
     </Link>
   ));
 
   const listButtons = currentLinks?.children.map((item, idx) => (
-    <div key={idx} className="group md:grid md:grid-cols-1">
+    <div key={idx} className="group flex grid md:grid-cols-1 place-self-center">
       <div
-        className="md:group-hover:sticky place-content-center p-1 place-self-start"
+        className="md:group-hover:sticky p-1 md:col-span-1"
         onMouseEnter={() => setRevealChildPages(idx)}
         onClick={() => setRevealChildPages(idx)}
       >
@@ -57,6 +65,8 @@ const Header = (props: HeaderProps) => {
           <Button
             textToDisplay={item.pageName}
             click={() => {
+              console.log(currentLinks.pageUrl);
+              console.log(pathname);
               !previousLinks.includes(currentLinks)
                 ? setPreviousLinks([...previousLinks, currentLinks])
                 : {};
@@ -69,7 +79,7 @@ const Header = (props: HeaderProps) => {
       </div>
       {revealChildPages === idx &&
         currentLinks.children[idx].children.length > 0 && (
-          <div className="hidden group-hover:contents md:group-hover:isolate">
+          <div className="hidden md:col-span-1 md:group-hover:contents md:group-hover:isolate bg-darkBlue">
             <div
               className={`absolute ${
                 headerColors[previousLinks.length]
@@ -100,15 +110,14 @@ const Header = (props: HeaderProps) => {
         )}
     </div>
   ));
+
   return (
     <div
-      className={`md:relative z-50 flex-row p-4 w-11/12 md:w-10/12 ${
-        headerColors[previousLinks.length]
-      } border-solid border-2 rounded-3xl m-4`}
+      className={`md:relative z-50 flex-row p-4 w-11/12 md:w-10/12 bg-darkBlue border-solid border-2 rounded-3xl m-4`}
     >
       <Link href={"/"}>
         <div
-          className="font-bold text-center text-fourthcolor tracking-wider text-3xl p-1 pb-2"
+          className="font-bold text-center text-midOrange tracking-wider text-3xl p-1 pb-2"
           onClick={() => {
             setCurrentLinks(sitemap.home);
             setPreviousLinks([]);
@@ -122,7 +131,7 @@ const Header = (props: HeaderProps) => {
           <h2>{props.subtitle}</h2>
         </div>
       )}
-      <div className="flex md:justify-center space-x-1 overflow-x-auto -webkit-overflow-scrolling: auto; touch-auto scrolling-touch">
+      <div className="flex md:justify-center space-x-1 overflow-x-auto -webkit-overflow-scrolling: auto; touch-auto scrolling-touch md:place-content-center">
         {previousLinks && listBreadcrumbs}
         {currentLinks && listButtons}
       </div>

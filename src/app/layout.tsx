@@ -14,6 +14,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+        <title>Ben Sweeney</title>
+      </head>
       <body className={`${chauPhilomene.className} antialiased`}>
         <main>
           <div className="absolute">

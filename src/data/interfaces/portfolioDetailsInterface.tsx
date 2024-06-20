@@ -11,7 +11,7 @@ export default interface portfolioDetails {
     }[];
   };
   art: { artOverview: string; projects: [] };
-  drawing: [];
+  drawing: { drawingOverview: string; projects: [] };
   animation: {
     animationOverview: string;
     projects: {

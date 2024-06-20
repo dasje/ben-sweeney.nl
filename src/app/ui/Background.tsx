@@ -24,7 +24,7 @@ export default function Background() {
       // this loads the tsparticles package bundle, it's the easiest method for getting everything ready
       // starting from v2 you can add only the features you need reducing the bundle size
       //await loadAll(engine);
-        await loadFull(engine);
+      await loadFull(engine);
       //   await loadFireflyPreset(engine);
       // await loadSeaAnemonePreset(engine);
       //   await loadSlim(engine);
@@ -42,73 +42,76 @@ export default function Background() {
     () => ({
       //   preset: "firefly",
       // preset: "seaAnemone",
-        fullScreen: { enable: true, zIndex: -10 },
-        background: {
-          color: {
-            value: "#5f0f40",
-          },
+      fullScreen: { enable: true, zIndex: -10 },
+      background: {
+        color: {
+          value: "#94D2BD",
         },
-        fpsLimit: 120,
-        interactivity: {
-          detectsOn: "window",
-          events: {
-            onClick: {
-              enable: true,
-              mode: "push",
-            },
-            onHover: {
-              enable: true,
-              mode: "repulse",
-            },
-          },
-          modes: {
-            push: {
-              quantity: 10,
-            },
-            repulse: {
-              distance: 200,
-              duration: 0.4,
-            },
-          },
-        },
-        particles: {
-          color: {
-            value: "#ffffff",
-          },
-          links: {
-            color: "#ffffff",
-            distance: 150,
+      },
+      fpsLimit: 120,
+      interactivity: {
+        detectsOn: "window",
+        events: {
+          onClick: {
             enable: true,
-            opacity: 0,
-            width: 4,
+            mode: "attract",
           },
-          move: {
-            direction: MoveDirection.none,
+          onHover: {
             enable: true,
-            outModes: {
-              default: OutMode.out,
-            },
-            random: false,
-            speed: 6,
-            straight: false,
-          },
-          number: {
-            density: {
-              enable: true,
-            },
-            value: 80,
-          },
-          opacity: {
-            value: 0.8,
-          },
-          shape: {
-            type: "circle",
-          },
-          size: {
-            value: { min: 1, max: 10 },
+            mode: ["connect", "grab"],
           },
         },
-        detectRetina: true,
+        modes: {
+          push: {
+            quantity: 50,
+          },
+          repulse: {
+            distance: 200,
+            duration: 0.4,
+          },
+        },
+      },
+      particles: {
+        color: {
+          value: "#005F73",
+        },
+        links: {
+          color: "#0A9396",
+          distance: 50,
+          enable: true,
+          opacity: 1,
+          width: 4,
+        },
+        move: {
+          direction: MoveDirection.none,
+          enable: true,
+          outModes: {
+            default: OutMode.out,
+          },
+          attract: {
+            enable: true,
+          },
+          random: true,
+          speed: 0.3,
+          straight: false,
+        },
+        number: {
+          density: {
+            enable: true,
+          },
+          value: 200,
+        },
+        opacity: {
+          value: 0.8,
+        },
+        shape: {
+          type: ["circle", "triangle", "line", "edge", "polygon"],
+        },
+        size: {
+          value: { min: 1, max: 5 },
+        },
+      },
+      detectRetina: true,
     }),
     []
   );

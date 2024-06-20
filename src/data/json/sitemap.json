@@ -46,7 +46,8 @@
             ]
           }
         ]
-      }
+      },
+      { "pageName": "Contact", "pageUrl": "/pages/contact", "children": [] }
     ]
   }
 }

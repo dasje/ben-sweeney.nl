@@ -26,8 +26,11 @@
       }
     ]
   },
-  "art": { "artOverview": "Visual art is a lifelong passion and hobby for me. I always dabble in different art froms, but my art has coalesced in three distinct forms: drawing, animation, and motion graphics. Please use the links above to explore the art I produce.", "projects": [] },
-  "drawing": [],
+  "art": {
+    "artOverview": "Visual art is a lifelong passion and hobby for me. I always dabble in different art froms, but my art has coalesced in three distinct forms: drawing, animation, and motion graphics. Please use the links above to explore the art I produce.",
+    "projects": []
+  },
+  "drawing": { "drawingOverview": "Under construction.", "projects": [] },
   "animation": {
     "animationOverview": "My desire to animate created my interest in coding, since I primarily learned coding to access object manipulation in Adobe Flash. Since then, my interest in animation has expanded greatly, particularly in the area of character animation.",
     "projects": [

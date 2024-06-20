@@ -1,10 +1,5 @@
 import React from "react";
 import "@/app/globals.css";
-import Image from "next/image";
-import backwardArrow from "@/app/lib/icons/icons8-back-arrow-100.png";
-import downwardArrow from "@/app/lib/icons/icons8-down-arrow-100.png";
-import forwardArrow from "@/app/lib/icons/icons8-right-arrow-100.png";
-import upwardArrow from "@/app/lib/icons/icons8-chevron-up-100.png";
 
 interface ButtonProps {
   textToDisplay?: string;
@@ -40,7 +35,7 @@ const Button = (props: ButtonProps) => {
         className={`${
           props.buttonColor ? background[props.buttonColor] : "bg-fifthcolor"
         } border-solid ${
-          props.focusButton ? "border-2 mix-blend-screen" : "border"
+          props.focusButton === true ? "border-2 mix-blend-screen" : "border"
         } rounded-full m-2.5 w-36 hover:animate-pulse hover:bg-bsButtonHoverColor flex justify-center`}
         onClick={props.click}
       >

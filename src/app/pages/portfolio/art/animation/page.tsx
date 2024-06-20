@@ -3,6 +3,8 @@ import Card from "../../../../ui/Card";
 import * as portfolio from "@/data/json/portfolioDetails.json";
 import portfolioDetailsInterface from "@/data/interfaces/portfolioDetailsInterface";
 import PortfolioItemContainer from "@/app/ui/PortfolioItemContainer";
+import { Suspense } from "react";
+import LoadingAnimation from "@/app/ui/LoadingAnimation";
 
 export default function Page() {
   const portfolioDetails = portfolio as portfolioDetailsInterface;
@@ -21,10 +23,12 @@ export default function Page() {
   };
   const listAnimations = portfolioDetails.animation.projects.map(
     (item, idx) => (
-      <PortfolioItemContainer key={idx} title={item.itemName}>
-        {embedYoutube(item.link)}
-        <div>{item.description}</div>
-      </PortfolioItemContainer>
+      <Suspense key={idx} fallback={<LoadingAnimation />}>
+        <PortfolioItemContainer title={item.itemName}>
+          {embedYoutube(item.link)}
+          <div>{item.description}</div>
+        </PortfolioItemContainer>
+      </Suspense>
     )
   );
 

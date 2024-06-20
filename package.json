@@ -11,6 +11,8 @@
   "dependencies": {
     "@fullhuman/postcss-purgecss": "^6.0.0",
     "@material-tailwind/react": "^2.1.9",
+    "@react-email/components": "^0.0.19",
+    "@react-email/render": "^0.0.15",
     "@tsparticles/engine": "^3.4.0",
     "@tsparticles/preset-firefly": "^3.1.0",
     "@tsparticles/preset-sea-anemone": "^3.1.0",
@@ -21,7 +23,9 @@
     "postcss-normalize": "^10.0.1",
     "react": "^18",
     "react-dom": "^18",
+    "react-email": "^2.1.4",
     "react-scroll-parallax": "^3.4.5",
+    "resend": "^3.3.0",
     "tsparticles": "^3.4.0",
     "tsparticles-engine": "^2.12.0"
   },
