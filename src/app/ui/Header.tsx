@@ -1,7 +1,7 @@
 import "@/app/globals.css";
 import Button from "./Button";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 type navDetail = { pageName: string; pageUrl: string; children: navDetail[] };
 
@@ -25,43 +25,74 @@ const Header = ({
     number | null
   >(null);
 
+  const handleChildButtons = (newKey: number | null) => {
+    setRevealChildPages(newKey);
+  };
+  const handleGrandchildrenButtons = (newKey: number | null) => {
+    setRevealGrandchildPages(newKey);
+  };
+
   const listButtons = () => {
     return sitemap?.children.map((item, idx) => (
       <div
         key={idx}
         className="group flex grid md:grid-cols-1 place-self-center"
+        onMouseEnter={() => {
+          handleChildButtons(idx);
+        }}
+        onMouseLeave={() => {
+          handleChildButtons(null);
+          handleGrandchildrenButtons(null);
+        }}
       >
         <div
-          className="md:group-hover:sticky p-1 md:col-span-1"
-          onMouseEnter={() => setRevealChildPages(idx)}
-          onClick={() => setRevealChildPages(idx)}
-          onTouchStart={() => setRevealChildPages(idx)}
+          className="p-1 md:col-span-1"
+          onTouchStart={() => {
+            revealChildPages === null
+              ? handleChildButtons(idx)
+              : handleChildButtons(null);
+          }}
         >
           {item.children.length == 0 ? (
             <Link href={item.pageUrl}>
-              <Button textToDisplay={item.pageName} click={() => {}} />
+              <Button
+                textToDisplay={item.pageName}
+                click={() => {
+                  handleChildButtons(null);
+                  handleGrandchildrenButtons(null);
+                }}
+              />
             </Link>
           ) : (
             <Button textToDisplay={item.pageName} click={() => {}} />
           )}
         </div>
         {revealChildPages === idx && item.children.length > 0 && (
-          <div className="hidden md:col-span-1 md:group-hover:contents md:group-hover:isolate bg-darkBlue">
+          <div className="md:col-span-1 contents bg-darkBlue relative">
             <div
               className={`absolute ${"bg-darkBlue"} my-10 space-y-2 p-1 border-r border-l border-b border-dashed rounded-b-lg`}
             >
               {item.children.map((i, k) => (
                 <div key={k}>
                   <div
-                    className="place-content-center col-span-1 md:group-hover:sticky"
-                    onMouseEnter={() => setRevealGrandchildPages(k)}
+                    className="place-content-center col-span-1"
+                    onMouseEnter={() => {
+                      handleGrandchildrenButtons(k);
+                    }}
+                    onTouchStartCapture={() => {
+                      handleGrandchildrenButtons(k);
+                    }}
                   >
                     <Link href={i.pageUrl}>
                       <Button
                         textToDisplay={
                           i.children.length === 0 ? i.pageName : `${i.pageName}`
                         }
-                        click={() => {}}
+                        click={() => {
+                          i.children.length === 0 && handleChildButtons(null);
+                          i.children.length === 0 &&
+                            handleGrandchildrenButtons(null);
+                        }}
                         direction={
                           i.children.length === 0 ? undefined : "downward"
                         }
@@ -75,7 +106,12 @@ const Header = ({
                           <Button
                             textToDisplay={j.pageName}
                             buttonColor="second"
-                            click={() => {}}
+                            click={() => {
+                              j.children.length === 0 &&
+                                handleChildButtons(null);
+                              j.children.length === 0 &&
+                                handleGrandchildrenButtons(null);
+                            }}
                           />
                         </Link>
                       </div>
