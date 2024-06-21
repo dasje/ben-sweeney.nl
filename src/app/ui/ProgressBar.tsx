@@ -34,7 +34,7 @@ const ProgressBar = ({
                   </div>
                   <Image
                     //   style={{ rotate: "180deg" }}
-                    className="animate-pulse"
+                    className="animate-pulse pt-1 md:pt-0 pl-1"
                     width={30}
                     height={15}
                     src={downArrow}
