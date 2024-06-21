@@ -31,7 +31,9 @@ const ExperienceRack = ({
             } hover:animate-pulse content-center`}
             onMouseDown={() => setRevealDescription(!revealDescription)}
           >
-            <div className="text-sm">Click for more!</div>
+            <div className="text-sm">{`${
+              revealDescription ? "Click for less!" : "Click for more!"
+            }`}</div>
             <Image
               //   style={{ rotate: "180deg" }}
               className={`${revealDescription && "rotate-180"}`}
