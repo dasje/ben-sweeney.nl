@@ -5,11 +5,20 @@ import Link from "next/link";
 import githubLogo from "../lib/icons/icons8-github-50.png";
 import linkedInLogo from "../lib/icons/icons8-linkedin-50.png";
 
-const Footer = () => {
+interface FooterInterface {
+  contactLink?: string;
+}
+const Footer = ({ contactLink }: FooterInterface) => {
   const details = deets as detailsInterface;
   return (
     <div className="flex flex-col p-2 bg-darkBlue md:w-3/5 border-solid border-2 rounded-3xl m-4 text-white">
-      <div className="text-center">{details.contact.email}</div>
+      {contactLink ? (
+        <Link href={contactLink}>
+          <div className="text-center">{details.contact.email}</div>
+        </Link>
+      ) : (
+        <div className="text-center">{details.contact.email}</div>
+      )}
       <div className="flex flex-row">
         <div className="basis-full md:basis-1/2 w-2/5 m-4 content-center">
           <div className="text-right">
