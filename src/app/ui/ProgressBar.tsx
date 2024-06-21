@@ -21,7 +21,7 @@ const ProgressBar = ({
             progressPercentage < 70 ? "bg-green-600" : "bg-green-600"
           }`}
         >
-          <div className="grid grid-cols-5 gap-2 text-white text-sm md:text-sm font-semibold tracking-tight md:tracking-wide font-light">
+          <div className="grid grid-cols-5 gap-2 text-white text-sm md:text-base font-semibold tracking-tight md:tracking-wide font-light">
             <div className="col-span-4 md:place-self-start pl-2">
               {skillName}{" "}
               {librariesFrameworks.length > 0 && (
