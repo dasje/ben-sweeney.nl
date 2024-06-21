@@ -44,15 +44,15 @@ const Header = ({
           handleChildButtons(null);
           handleGrandchildrenButtons(null);
         }}
-        onTouchStart={() => {
-          handleChildButtons(idx);
-        }}
-        // onClick={() => {
-        //   handleChildButtons(null);
-        //   handleGrandchildrenButtons(null);
-        // }}
       >
-        <div className="p-1 md:col-span-1">
+        <div
+          className="p-1 md:col-span-1"
+          onTouchStart={() => {
+            revealChildPages === null
+              ? handleChildButtons(idx)
+              : handleChildButtons(null);
+          }}
+        >
           {item.children.length == 0 ? (
             <Link href={item.pageUrl}>
               <Button
