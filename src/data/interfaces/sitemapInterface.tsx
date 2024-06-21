@@ -12,4 +12,9 @@ export default interface sitemap {
       }[];
     }[];
   };
+  contact: {
+    pageName: string;
+    pageUrl: string;
+    children: [];
+  };
 }
