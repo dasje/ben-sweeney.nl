@@ -1,5 +1,10 @@
 import React from "react";
 import "@/app/globals.css";
+import forwardIcon from "@/app/lib/icons/icons8-right-arrow-100.png";
+import backwardIcon from "@/app/lib/icons/icons8-left-arrow-80.png";
+import upwardIcon from "@/app/lib/icons/icons8-chevron-up-100.png";
+import downwardIcon from "@/app/lib/icons/icons8-down-arrow-100.png";
+import Image from "next/image";
 
 interface ButtonProps {
   textToDisplay?: string;
@@ -12,10 +17,10 @@ interface ButtonProps {
 }
 const Button = (props: ButtonProps) => {
   const directionIcon = {
-    forward: ">",
-    backward: "<",
-    upward: "Up",
-    downward: "Down",
+    forward: forwardIcon,
+    backward: backwardIcon,
+    upward: upwardIcon,
+    downward: downwardIcon,
   };
   const fontColor = {
     white: "text-white",
@@ -46,20 +51,18 @@ const Button = (props: ButtonProps) => {
             } tracking-wider pl-5 pb-1 pr-5 pt-1`}
           >
             {props.textToDisplay}
+            {props.direction && (
+              <Image
+                className="ml-2"
+                src={directionIcon[props.direction]}
+                alt="direction"
+                height={10}
+                width={10}
+              />
+            )}
           </div>
         )}
-
-        {}
       </div>
-      {props.direction && (
-        <div
-          className={`${
-            props.textColor ? fontColor[props.textColor] : "text-white"
-          } pl-2 pb-1 pt-2`}
-        >
-          {directionIcon[props.direction]}
-        </div>
-      )}
     </div>
   );
 };
