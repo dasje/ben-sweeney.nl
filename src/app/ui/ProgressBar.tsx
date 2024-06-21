@@ -1,3 +1,6 @@
+import Image from "next/image";
+import downArrow from "@/app/lib/icons/icons8-down-arrow-101.png";
+
 interface ProgessBarsProps {
   skillName: string;
   progressPercentage: number;
@@ -15,11 +18,11 @@ const ProgressBar = ({
         <div
           style={{ width: `${progressPercentage}%` }}
           className={`h-full rounded-full ${
-            progressPercentage < 70 ? "bg-red-600" : "bg-green-600"
+            progressPercentage < 70 ? "bg-green-600" : "bg-green-600"
           }`}
         >
-          <div className="grid grid-cols-3 gap-2 text-white font-semibold tracking-tight md:tracking-wide font-light">
-            <div className="col-span-2 md:place-self-start pl-2">
+          <div className="grid grid-cols-5 gap-2 text-white text-sm md:text-sm font-semibold tracking-tight md:tracking-wide font-light">
+            <div className="col-span-4 md:place-self-start pl-2">
               {skillName}{" "}
               {librariesFrameworks.length > 0 && (
                 <>
@@ -29,6 +32,14 @@ const ProgressBar = ({
                   <div className="md:hidden contents">
                     -- ({librariesFrameworks.length})
                   </div>
+                  <Image
+                    //   style={{ rotate: "180deg" }}
+                    className="animate-pulse"
+                    width={30}
+                    height={15}
+                    src={downArrow}
+                    alt="down arrow"
+                  />
                 </>
               )}
             </div>

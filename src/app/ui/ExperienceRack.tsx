@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { useState } from "react";
-import downArrow from "@/app/lib/icons/icons8-down-arrow-100.png";
+import downArrow from "@/app/lib/icons/icons8-down-arrow-101.png";
 import Link from "next/link";
 
 export interface ExperienceRackProps {
@@ -31,14 +31,15 @@ const ExperienceRack = ({
             } hover:animate-pulse content-center`}
             onMouseDown={() => setRevealDescription(!revealDescription)}
           >
+            <div className="text-sm">Click for more!</div>
             <Image
               //   style={{ rotate: "180deg" }}
               className={`${revealDescription && "rotate-180"}`}
               width={40}
-              height={40}
+              height={20}
               src={downArrow}
               alt="down arrow"
-            />
+            />{" "}
           </div>
           <div className="space-y-2">
             {revealDescription &&
