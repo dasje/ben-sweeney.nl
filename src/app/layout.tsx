@@ -41,7 +41,7 @@ export default function RootLayout({
               </div>
             </div>
             <div className="z-50 flex justify-center md:sticky inset-x-0 bottom-0 block">
-              <Footer />
+              <Footer contactLink={sitemap.contact.pageUrl} />
             </div>
           </div>
         </main>
