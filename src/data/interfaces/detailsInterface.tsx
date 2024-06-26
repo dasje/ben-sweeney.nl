@@ -10,7 +10,7 @@ export default interface DetailsType {
     github: string;
     linkedin: string;
   };
-  aboutText: string;
+  aboutText: string[];
   programmingLanguageSkills: {
     skillName: string;
     progressPercentage: number;

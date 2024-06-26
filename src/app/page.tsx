@@ -22,8 +22,14 @@ export default function Page() {
             placeholder="blur"
           />
         </div>
-        <div className="col-span-3 md:col-span-2 w-4/5">
-          {details.aboutText}
+        <div className="col-span-3 md:col-span-2 md:w-4/5 space-y-2 text-justify">
+          {details.aboutText.map((i, k) => (
+            <>
+              <p className={`${k === 0 ? "" : "indent-4"} `} key={k}>
+                {i}
+              </p>
+            </>
+          ))}
         </div>
       </div>
     </Card>
