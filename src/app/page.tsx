@@ -19,6 +19,7 @@ export default function Page() {
             // height="200"
             src={profilePic}
             alt="profile pic"
+            placeholder="blur"
           />
         </div>
         <div className="col-span-3 md:col-span-2 w-4/5">
