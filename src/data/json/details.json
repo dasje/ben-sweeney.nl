@@ -10,7 +10,12 @@
     "github": "https://github.com/dasje",
     "linkedin": "https://www.linkedin.com/in/ben-sweeney-nl/"
   },
-  "aboutText": "Hi! My name is Ben.",
+  "aboutText": [
+    "Welcome to my website! I'm Ben, a developer based in The Netherlands. Through my career, I've cultivated a diverse set of skills and experiences that make me a versatile and knowledgeable developer.",
+    "My career journey includes significant experience in different industries, where I've developed strong problem-solving abilities and a keen analytical mindset. These experiences have seamlessly transferred into my software development career, enabling me to approach technical challenges with a unique perspective.",
+    "Alongside professional training, I have an insatiable desire to learn, and I am continuously broadening my knowledge-base through courses covering a wide range of topics from programming languages to data science. Additionally, I've worked on various coding projects, which you can explore in my portfolio. These projects showcase my ability to apply theoretical knowledge to practical applications, demonstrating my proficiency and passion for software development.",
+    "Feel free to browse through my work and reach out if you'd like to collaborate or simply connect!"
+  ],
   "programmingLanguageSkills": [
     {
       "skillName": "Python",
@@ -186,8 +191,8 @@
         "role": "Medior/Senior Developer",
         "tools": "Azure, Python, Javascript, Typescript, Docker, Kubernetes",
         "description": [
-          "This was a continuation of the training role begun with my experience at Young Coders. It was a challenging role that encompassed a wide range of disciplines, and provided me with opportunities to expand both my technological knowledge and my training abilities.",
-          "In this role I took lead roles in the creation of two applications oriented on data ingestion and analysis. I was also part of a team spearheading the first integration of ChatGPT into a live product that parses public company accounts and confirms compliance with ESG rulings.",
+          "This was a challenging role that encompassed a wide range of disciplines, and provided me with opportunities to expand both my technological knowledge and my training abilities.",
+          "In this role I took lead roles in the creation of two applications oriented on data ingestion and analysis. I was also part of a team within the company spearheading the first integration of ChatGPT into a live product that parses public company accounts and confirms compliance with ESG rulings.",
           "In my lead roles I was responsible for requirements gathering, data modeling, ETL pipelines, MVP front ends, and integration into existing platforms. In both cases my role included training junior developers; this took the shape of one-to-one sessions, walking through tasks, knowledge sharing sessions, providing meaningful pull request feedback, and maintaining standards in the code base.",
           "Due to the way our teams were organised, I was responsible for the staging of the product and database setup for all the products I worked on."
         ]
