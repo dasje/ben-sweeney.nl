@@ -11,7 +11,7 @@ export const sendEmail = async (prevState: State, formData: FormData) => {
   const name = formData.get("name") as string;
   const email = formData.get("email") as string;
   const message = formData.get("message") as string;
-  const resend = new Resend("re_fYtFjvpa_8CPFLNp8uiJjmmKnmKjYBgq8"); //(process.env.RESEND_API_KEY);
+  const resend = new Resend(process.env.RESEND_API_KEY);
   try {
     await resend.emails.send({
       from: `${process.env.EMAIL_NAME} <${process.env.EMAIL}>`,
