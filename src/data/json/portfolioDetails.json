@@ -4,6 +4,13 @@
     "codeOverview": "Coding has been one of my life-long interests. I started with BBC Basic, writing simple programmes to help choose vacation options for the family, moved through to ActionScript to help manipulate objects in Flash animations, and finally settled on Python. I am always excited to learn the new possibilities of different languages.",
     "projects": [
       {
+        "projectName": "Badger Apps",
+        "link": "https://github.com/dasje/app-repo",
+        "image": "https://cdn.icon-icons.com/icons2/3915/PNG/512/vercel_logo_icon_249276.png",
+        "description": "This is a platform built with Next.js and deployed on Vercel. It's purpose is to host the web-applications I have built in one place. It has been built using the Next.js app router to allow apps that have heavier data transformations to perform these server-side.",
+        "tech": ["Typescript", "Next.js", "Kysely"]
+      },
+      {
         "projectName": "User API",
         "link": "https://github.com/dasje/user-api",
         "image": "https://cdn.icon-icons.com/icons2/602/PNG/512/Gender_Neutral_User_icon-icons.com_55902.png",
